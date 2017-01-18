@@ -1,0 +1,13 @@
+<p>Carted products</p>
+
+  <% @carted_products.each do |carted_product| %>
+    <% if carted_product.status == 'carted' %>
+      <p>Name: <%= carted_product.product.name %></p>
+      <p>quantity: <%= carted_product.quantity %></p>
+      <% end %>
+    <% end %>
+    <%= form_tag '/orders', method: :post do %>
+    <%= submit_tag "Buy now!" %>
+  <% end %>
+
+ 

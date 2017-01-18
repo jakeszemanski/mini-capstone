@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+products = Product.create([{name: 'wallet'}, {price: '12.99'}, {image: 'http://pngimg.com/upload/wallet_PNG7517.png'}, {description: 'A container for money'}])

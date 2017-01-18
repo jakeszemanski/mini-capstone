@@ -1,3 +1,18 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-image: url('binding_dark.png');
+  font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif
+
+}
+
+.well img {
+  width: 100%
+
+}
+
+.sale {
+  font-color: red
+}

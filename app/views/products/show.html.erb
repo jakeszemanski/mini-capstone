@@ -1,0 +1,24 @@
+<h1><%= @product.name %></h1>
+<p><%= @product.price %></p>
+<p><%= @product.description%> </p>
+  <% @product.images.each do |prdct_image| %>
+  <p><img src="<%= prdct_image.name %>"></p>
+  <% end %>
+
+<%= form_tag '/carted_products', method: :post do %>
+<div>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity %>
+  </div>
+  <div>
+    <%= hidden_field_tag :product_id, @product.id %>
+  </div>
+  <%= submit_tag "Add to cart!" %>
+   <% end %>
+</div>
+<div>
+  <a href="/products">Back to home</a>
+</div>
+<div>
+  <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %>
+</div>

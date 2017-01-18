@@ -1,0 +1,35 @@
+<p>Update product</p>
+
+   <% if @product.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+             
+                <ul>
+                <% @product.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+<%= form_tag "/products/#{@product.id}", method: :patch do %>
+  <div class="form-group">
+  <%= label_tag :name, 'Enter product name: ' %>
+  <%= text_field_tag :name, @product.name, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+  <%= label_tag :price, 'Enter product price: ' %>
+  <%= text_field_tag :price, @product.price, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :description, 'Enter product description: ' %>
+  <%= text_field_tag :description, @product.description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :image, 'Enter product html: ' %>
+  <%= text_field_tag :image, @product.images.name, class: 'form-control' %>
+  </div>
+  <div>
+  <%= submit_tag 'Submit product!' %>
+  </div>
+  <% end %>

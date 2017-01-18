@@ -1,0 +1,18 @@
+<h1>Products </h1>
+<% @products.each do |item| %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="well">
+      <h2><a href="/products/<%=item.id%>"><%=  item.name %> </a></h2>
+      <p><%=   item.description %></p>
+       <p> <%=   item.price %></p>
+      <p><%= item.sale_message %> </p>
+      <p>Tax: <%= item.tax %></p>
+      <p>Total: <%= item.total %></p>
+      <p><img src="<%= item.images[0].name %>"></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+<a href="/products/new">Add a product </a>
+

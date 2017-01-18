@@ -1,0 +1,10 @@
+
+<h1>Order summary:</h1>
+<% @order.carted_products.each do |product| %>
+  <h2>Item: <%=product.product.name %> </h2>
+  <h3>Quantity: <%=product.quantity %></h3>
+  <h2>Price <%= product.product.price %></h2>
+<% end %>
+ <h3>Subtotal: <%= @order.subtotal%></h3>
+  <h3>Tax: <%= @order.tax%></h3>
+  <h3>Total: <%= @order.total%></h3>
